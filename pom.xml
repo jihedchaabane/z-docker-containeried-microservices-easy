@@ -104,6 +104,7 @@
 	</build>
 	
 	<modules>
+		<module>z-springboot-hello</module>
         <module>z-springboot-hello-world-service</module>
     </modules>
 	
