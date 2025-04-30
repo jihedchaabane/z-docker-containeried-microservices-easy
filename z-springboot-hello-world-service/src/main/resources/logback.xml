@@ -11,9 +11,9 @@
 
 
 	<appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${DEV_HOME}/z-springboot-foo-service/z-springboot-foo-service.log</file>
+		<file>${DEV_HOME}/z-springboot-hello-world-service/z-springboot-hello-world-service.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${DEV_HOME}/archived/z-springboot-foo-service/z-springboot-foo-service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>${DEV_HOME}/archived/z-springboot-hello-world-service/z-springboot-hello-world-service.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>100MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>

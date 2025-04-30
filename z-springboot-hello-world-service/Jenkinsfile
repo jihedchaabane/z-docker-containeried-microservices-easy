@@ -2,16 +2,17 @@ pipeline {
     agent any
     environment {
         // Nom de l'image Docker
-        DOCKER_IMAGE = 'jihed123/springboot-conf-admin-server:0.0.1-SNAPSHOT'
+        DOCKER_IMAGE = 'jihed123/z-springboot-hello-world-service:0.0.1-SNAPSHOT'
         // Nom du conteneur
-        CONTAINER_NAME = 'container-springboot-conf-admin-server'
+        CONTAINER_NAME = 'container-z-springboot-hello-world-service'
         // Port de l'application
-        APP_PORT = '8763'
+        APP_PORT = '7776'
         // common-network
         DOCKER_NETWORK = 'springboot-network'
         
         // eureka-server url.
         EUREKA_URL = 'http://container-springboot-conf-eureka-server:8761/eureka/'
+        CONFIG_SERVER_ADDR = 'http://container-springboot-conf-config-server:8762'
     }
     stages {
         stage('Checkout') {
@@ -109,7 +110,11 @@ pipeline {
                 script {
                     // Lancer le conteneur
                     sh """
-                        docker run -e EUREKA_ADDR=${EUREKA_URL} -d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} -p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
+                        docker run \
+                        	-e EUREKA_ADDR=${EUREKA_URL} \
+                        	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
+                        	-d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
+                        	-p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
                     """
                 }
             }

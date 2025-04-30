@@ -1,13 +1,13 @@
 server:
-  port: 7778
+  port: 7776
 
 spring:
   profiles:
     active: dev
   application:
-    name: z-springboot-foo-service
+    name: z-springboot-hello-world-service
   # Connect to the config server to get the properties
   cloud:
     config:
-      uri: http://localhost:8762
-      #uri: https://localhost:8443
+      uri: ${CONFIG_SERVER_ADDR:http://localhost:8762}
+      #uri: ${CONFIG_SERVER_ADDR:http://localhost:8443}

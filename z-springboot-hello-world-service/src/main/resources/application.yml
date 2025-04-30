@@ -1,31 +1,8 @@
 
-spring:
-  boot:
-    admin:
-      client:
-        # Url of admin server where admin client will register
-        url: http://localhost:8763/
-        # To enable or disable auto registration
-        auto-registration: true
-        # To enable or disable admin client
-        enabled: true
-        # Interval in which registration to admin server is repeated
-        period: 1000
-        # Service-url you want to register with.
-        # Can be overridden in case the reachable url is different
-        instance:
-          service-url: http://localhost:7778/
-        #spring.boot.admin.client.metadata:
-        #  user.name: monitor
-        #  user.password: monitor-pwd
-        # spring.boot.admin.client.instance.name=microservice1
-      routes:
-        endpoints: env, metrics, trace, info, configprops
-
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_ADDR:http://localhost:8761/eureka/}
 
 management:
   endpoints:
