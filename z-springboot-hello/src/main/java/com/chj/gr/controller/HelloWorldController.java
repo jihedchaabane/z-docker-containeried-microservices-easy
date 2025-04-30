@@ -11,6 +11,7 @@ public class HelloWorldController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
     @GetMapping("/hello")
+//    @CrossOrigin(origins = "*")
     public String hello() {
     	logger.info("{}", "hello world");
         return "hello world";
