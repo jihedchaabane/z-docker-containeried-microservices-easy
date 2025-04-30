@@ -18,8 +18,14 @@ public class HelloWorldController {
    	private String helloMsg;
     
     @GetMapping("/hello")
-    public String foo() {
+    public String hello() {
     	logger.info("{}", "hello world");
+        return "hello world";
+    }
+    
+    @GetMapping("/hello-property")
+    public String helloProperty() {
+    	logger.info("{}", helloMsg);
         return helloMsg;
     }
     
@@ -28,6 +34,7 @@ public class HelloWorldController {
 
 	@GetMapping("/display-properties")
 	public String getProperties() {
+		logger.info("{}", helloPropertiesConfiguration.toString());
 		return helloPropertiesConfiguration.toString();
 	}
 }
