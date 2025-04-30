@@ -19,6 +19,6 @@ management:
 # http://localhost:7778/swagger-ui/index.html
 app:
   openapi:
-    dev-url: http://localhost:${server.port}
-    homol-url: http://homol-foo:${server.port}
+    dev-url: http://129.0.0.129:${server.port}
+    homol-url: http://129.0.0.129:${server.port}
     prod-url: https://prod-foo.com
