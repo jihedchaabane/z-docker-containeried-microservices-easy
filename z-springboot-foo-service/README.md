@@ -16,7 +16,7 @@ sudo firewall-cmd --list-ports
 sudo firewall-cmd --list-all
 -----------------------------------------------------
 
-curl http://10.0.0.129:7775/
-curl http://10.0.0.129:7775/foo-properties
-curl http://10.0.0.129:7775/foobar
+curl http://10.0.0.129:7778/
+curl http://10.0.0.129:7778/foo-properties
+curl http://10.0.0.129:7778/foobar
 -----------------------------------------------------
