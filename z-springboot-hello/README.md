@@ -15,5 +15,6 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --list-ports
 sudo firewall-cmd --list-all
 -----------------------------------------------------
+http://10.0.0.129:7775/swagger-ui/index.html
 
 curl http://10.0.0.129:7775/hello

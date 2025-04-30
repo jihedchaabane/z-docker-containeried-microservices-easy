@@ -107,6 +107,8 @@
 		<module>z-springboot-hello</module>
         <module>z-springboot-hello-world-service</module>
 		<module>z-springboot-foo-service</module>
+		<module>z-springboot-bar-service</module>
+		
     </modules>
 	
 </project>

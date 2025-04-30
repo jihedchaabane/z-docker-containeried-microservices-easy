@@ -17,7 +17,6 @@ import io.swagger.v3.oas.models.servers.Server;
  * 
  * https://www.baeldung.com/java-spring-security-permit-swagger-ui
  */
-//http://localhost:7776/swagger-ui/index.html
 @Configuration
 public class OpenAPIConfig {
 

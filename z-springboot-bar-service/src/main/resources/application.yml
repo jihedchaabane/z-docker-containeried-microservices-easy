@@ -1,0 +1,57 @@
+#springdoc.api-docs.enabled=false
+#springdoc.swagger-ui.enabled=false
+#springdoc.packages-to-scan=com.bezkoder.spring.swagger.controller
+springdoc:
+  swagger-ui:
+    path: /jihed-koder-documentation
+    tryItOutEnabled: true
+    filter: true
+  api-docs:
+    path: /jihed-koder-documentation
+#springdoc.swagger-ui.operationsSorter=method
+#springdoc.swagger-ui.tagsSorter=alpha
+
+app:
+  openapi:
+    dev-url: http://localhost:${server.port}
+    homol-url: http://10.0.0.129:${server.port}
+    prod-url: https://prod-bar.com
+
+spring:
+#  boot:
+#    admin:
+#      client:
+        # Url of admin server where admin client will register
+#        url: http://localhost:8763/
+        # To enable or disable auto registration
+#        auto-registration: true
+        # To enable or disable admin client
+#        enabled: true
+        # Interval in which registration to admin server is repeated
+#        period: 1000
+        # Service-url you want to register with.
+        # Can be overridden in case the reachable url is different
+#        instance:
+#          service-url: http://localhost:7777/
+          #spring.boot.admin.client.metadata:
+          #  user.name: monitor
+          #  user.password: monitor-pwd
+          # spring.boot.admin.client.instance.name=microservice1
+#      routes:
+#        endpoints: env, metrics, trace, info, configprops
+
+  cloud:
+    vault:
+      scheme: http
+      uri: ${VAULT_ADDR:http://127.0.0.1:8200}
+      # OR
+      #host: 127.0.0.1
+      #port: 8200
+      token: ${VAULT_TOKEN:00000000-0000-0000-0000}
+      authentication: TOKEN
+      connection-timeout: 5000
+      read-timeout: 15000
+      kv:
+        enabled: true
+        default-context: z-springboot-bar-service
+      import: vault://
