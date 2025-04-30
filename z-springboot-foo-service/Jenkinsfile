@@ -2,13 +2,13 @@ pipeline {
     agent any
     environment {
 		// Chemin du module Spring Boot
-        MODULE_PATH = 'z-springboot-hello-world-service'
+        MODULE_PATH = 'z-springboot-foo-service'
         // Nom de l'image Docker
-        DOCKER_IMAGE = 'jihed123/z-springboot-hello-world-service:0.0.1-SNAPSHOT'
+        DOCKER_IMAGE = 'jihed123/z-springboot-foo-service:0.0.1-SNAPSHOT'
         // Nom du conteneur
-        CONTAINER_NAME = 'container-z-springboot-hello-world-service'
+        CONTAINER_NAME = 'container-z-springboot-foo-service'
         // Port de l'application
-        APP_PORT = '7776'
+        APP_PORT = '7778'
         // common-network
         DOCKER_NETWORK = 'springboot-network'
         
