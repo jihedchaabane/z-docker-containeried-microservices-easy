@@ -1,0 +1,6 @@
+server:
+  port: 7775
+
+spring:
+  application:
+    name: z-springboot-hello
