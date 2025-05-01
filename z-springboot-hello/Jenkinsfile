@@ -34,6 +34,36 @@ pipeline {
             }
         }
         
+        stage('Read POM Properties') {
+            steps {
+                script {
+                    // Read the pom.xml file
+                    def pom = readMavenPom file: 'pom.xml'
+                    
+                    // Extract standard Maven coordinates
+                    def groupId = pom.groupId ?: 'Not specified'
+                    def artifactId = pom.artifactId ?: 'Not specified'
+                    def version = pom.version ?: 'Not specified'
+                    def packaging = pom.packaging ?: 'Not specified'
+                    
+                    // Extract custom properties from the <properties> section
+                    def customProperties = pom.properties ?: [:]
+                    
+                    // Display standard Maven coordinates
+                    echo "GroupId: ${groupId}"
+                    echo "ArtifactId: ${artifactId}"
+                    echo "Version: ${version}"
+                    echo "Packaging: ${packaging}"
+                    
+                    // Display custom properties
+                    echo "Custom Properties:"
+                    customProperties.each { key, value ->
+                        echo "${key}: ${value}"
+                    }
+                }
+            }
+        }
+        
         stage('Stop and Remove Existing Container') {
             steps {
                 script {
