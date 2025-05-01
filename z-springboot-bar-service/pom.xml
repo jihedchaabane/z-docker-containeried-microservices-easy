@@ -18,7 +18,7 @@
 	</properties>
 	
 	<dependencies>
-		<!-- Vault Starter 
+		<!-- Vault Starter -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-vault-config</artifactId>
@@ -27,7 +27,7 @@
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
-		-->
+		
 	</dependencies>
 
 </project>

@@ -119,13 +119,23 @@ pipeline {
             steps {
                 script {
                     // Lancer le conteneur
+//                    sh """
+//                        docker run \
+//                        	-e EUREKA_ADDR=${EUREKA_URL} \
+//                        	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
+//                        	-d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
+//                        	-p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
+//                    """
                     sh """
-                        docker run \
-                        	-e EUREKA_ADDR=${EUREKA_URL} \
-                        	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
-                        	-d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
-                        	-p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
-                    """
+                    docker run \
+					    -e SPRING_CLOUD_VAULT_TOKEN=my-root-token \
+					    -e SPRING_CLOUD_VAULT_URI=http://container-vault-server:8200 \
+					    -e SPRING_CLOUD_VAULT_AUTHENTICATION=TOKEN \
+					    -e SPRING_CLOUD_VAULT_KV_ENABLED=true \
+					    -e SPRING_CLOUD_VAULT_KV_DEFAULT_CONTEXT=z-springboot-bar-service \
+					    -d --name container-z-springboot-bar-service --network springboot-network \
+					    -p 7777:7777 jihed123/z-springboot-bar-service:0.0.1-SNAPSHOT
+     """
                 }
             }
         }
