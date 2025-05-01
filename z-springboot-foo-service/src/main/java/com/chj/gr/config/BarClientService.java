@@ -22,4 +22,11 @@ public class BarClientService {
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }
+
+    public String getBarProperties() {
+    	
+    	String barUrl = "http://z-springboot-bar-service/properties";
+    	logger.info("Calling {}", barUrl);
+        return restTemplate.getForObject(barUrl, String.class);
+    }
 }

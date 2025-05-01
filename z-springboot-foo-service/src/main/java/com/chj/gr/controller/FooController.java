@@ -24,18 +24,12 @@ public class FooController {
     @Value("${foo.msg:Config Server is not working. Please check...}")
    	private String fooMsg;
     
-    /**
-     * http://localhost:7778/
-     */
     @GetMapping("/")
     public String foo() {
     	logger.info("{}", "foo");
         return fooMsg;
     }
     
-    /**
-     * http://localhost:7778/properties
-     */
     @Autowired
 	private FooPropertiesConfiguration fooPropertiesConfiguration;
 
@@ -44,9 +38,6 @@ public class FooController {
 		return fooPropertiesConfiguration.toString();
 	}
 
-	/**
-	 * http://localhost:7778/foobar
-	 */
     @GetMapping("/foobar")
     public String fooBar() {
     	
@@ -54,5 +45,12 @@ public class FooController {
     	logger.info("{}", foobar);
         return foobar;
     }
+    
+    @GetMapping("/bar-properties")
+	public String getBarProperties() {
+    	String barProperties =  barClientService.getBarProperties();
+    	logger.info("{}", barProperties);
+		return barProperties;
+	}
 
 }
