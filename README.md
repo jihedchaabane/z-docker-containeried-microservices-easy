@@ -18,11 +18,16 @@ http://10.0.0.129:8763/
 http://10.0.0.129:7775/swagger-uiindex.html
 # z-springboot-hello-world-service
 http://10.0.0.129:7776/swagger-ui/index.html
+# z-springboot-bar-service
+http://10.0.0.129:7777/swagger-ui/index.html
 # z-springboot-foo-service
 http://10.0.0.129:7778/swagger-ui/index.html
 
+# Vault container
+http://10.0.0.129:8200/
 
-#### git error : fatal: index file smaller than expected
+
+#### (Config Server) git error : fatal: index file smaller than expected
 -Remove the corrupted index file:
 	rm .git/index
 -Reset the index:
