@@ -120,8 +120,6 @@ pipeline {
                 script {
                     // Lancer le conteneur
                     sh """
-                    	echo ${VAULT_ADDR}
-						echo ${VAULT_TOKEN} 
                         docker run \
                         	-e EUREKA_ADDR=${EUREKA_URL} \
                         	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
