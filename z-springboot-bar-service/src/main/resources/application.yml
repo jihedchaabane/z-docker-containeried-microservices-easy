@@ -1,6 +1,6 @@
 #springdoc.api-docs.enabled=false
 #springdoc.swagger-ui.enabled=false
-#springdoc.packages-to-scan=com.bezkoder.spring.swagger.controller
+#springdoc.packages-to-scan=com.chj.gr.controller
 springdoc:
   swagger-ui:
     path: /jihed-koder-documentation
