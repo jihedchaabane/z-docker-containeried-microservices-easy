@@ -17,7 +17,6 @@ public class BarPropertiesConfiguration {
 	private String property3;
 //	private String property4Encrypted;
 	private String property5;
-	private String property6;
 	
 	public String getProperty1() {
 		return property1;
@@ -59,18 +58,10 @@ public class BarPropertiesConfiguration {
 		this.property5 = property5;
 	}
 
-	public String getProperty6() {
-		return property6;
-	}
-
-	public void setProperty6(String property6) {
-		this.property6 = property6;
-	}
-
 	@Override
 	public String toString() {
 		return "BarPropertiesConfiguration [property1=" + property1 + ", property2=" + property2 + ", property3="
-				+ property3 + ", property5=" + property5 + ", property6=" + property6 + "]";
+				+ property3 + ", property5=" + property5 + "]";
 	}
 
 
