@@ -19,6 +19,9 @@ public class BarController {
 	@Value("${msg:Config Server is not working. Please check...}")
 	private String msg;
 	
+	@Value("${fromvault:Config Server is not working. Please check...}")
+	private String thePropertyFromVault;
+	
 
 	@GetMapping("/")
 	public String bar() {
@@ -31,6 +34,12 @@ public class BarController {
 	public String getMsg() {
 		logger.info("{} is returned", this.msg);
 		return this.msg;
+	}
+	
+	@GetMapping("/fromVault")
+	public String fromVault() {
+		logger.info("{} is returned", this.thePropertyFromVault);
+		return this.thePropertyFromVault;
 	}
 
 	@GetMapping("/properties")
