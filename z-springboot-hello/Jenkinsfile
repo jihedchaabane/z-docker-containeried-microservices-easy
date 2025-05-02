@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'MAVEN'
+    }
     environment {
 		// Chemin du module Spring Boot
         MODULE_PATH = 'z-springboot-hello'
@@ -28,8 +31,22 @@ pipeline {
                 script {
                     // Construire uniquement le module Spring Boot
                     sh """
-                        /opt/maven/bin/mvn clean package -pl ${MODULE_PATH} -am
+                        mvn clean package -pl ${MODULE_PATH} -am
                     """
+                }
+            }
+        }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                // Nom du serveur configuré dans l'étape 2
+                withSonarQubeEnv('SonarQubeServer') {
+                    sh '''
+                        mvn sonar:sonar \
+                            -Dsonar.java.binaries=. \
+                            -Dsonar.projectName=${MODULE_PATH} \
+                            -Dsonar.projectKey=${MODULE_PATH}
+                    '''
                 }
             }
         }
