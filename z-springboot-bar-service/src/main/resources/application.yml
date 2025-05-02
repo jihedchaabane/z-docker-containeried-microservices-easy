@@ -14,5 +14,5 @@ springdoc:
 app:
   openapi:
     dev-url: http://localhost:${server.port}
-    homol-url: http://10.0.0.129:${server.port}
+    homol-url: http://10.0.0.137:${server.port}
     prod-url: https://prod-bar.com
