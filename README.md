@@ -10,7 +10,7 @@ http://10.0.0.129:8762/
 http://10.0.0.129:8763/
 
 # z-springboot-hello
-http://10.0.0.129:7775/swagger-uiindex.html
+http://10.0.0.129:7775/swagger-ui/index.html
 # z-springboot-hello-world-service
 http://10.0.0.129:7776/swagger-ui/index.html
 # z-springboot-bar-service =>> (VAULT configured)
