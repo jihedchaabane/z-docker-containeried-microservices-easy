@@ -18,6 +18,6 @@ sudo firewall-cmd --list-all
 http://10.0.0.137:7777/swagger-ui/index.html
 
 curl http://10.0.0.137:7777/
-curl http://10.0.0.137:7777/foo-properties
-curl http://10.0.0.137:7777/foobar
+curl http://10.0.0.137:7777/msg
+curl http://10.0.0.137:7777/properties
 -----------------------------------------------------

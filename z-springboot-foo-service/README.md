@@ -20,4 +20,5 @@ http://10.0.0.137:7778/swagger-ui/index.html
 curl http://10.0.0.137:7778/
 curl http://10.0.0.137:7778/foo-properties
 curl http://10.0.0.137:7778/foobar
+curl http://10.0.0.137:7778/bar-properties
 -----------------------------------------------------
