@@ -13,8 +13,5 @@ public class HelloServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HelloServiceApplication.class, args);
-        /**
-         * http://localhost:7775/swagger-ui/index.html
-         */
     }
 }

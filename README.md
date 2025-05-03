@@ -7,7 +7,7 @@ http://10.0.0.137:9000/
 # Eureka
 http://10.0.0.137:8761/
 # Config Server
-http://10.0.0.137:8762/
+http://10.0.0.137:8762/actuator/health
 # Springboot Admin
 http://10.0.0.137:8763/
 
