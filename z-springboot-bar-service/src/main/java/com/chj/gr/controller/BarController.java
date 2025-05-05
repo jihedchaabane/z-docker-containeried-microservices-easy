@@ -19,13 +19,6 @@ public class BarController {
 	@Value("${msg:Config Server is not working. Please check...}")
 	private String msg;
 	
-	@GetMapping("/")
-	public String bar() {
-
-		logger.info("bar is returned");
-		return "bar";
-	}
-
 	@GetMapping("/msg")
 	public String getMsg() {
 		logger.info("{} is returned", this.msg);

@@ -18,7 +18,7 @@ public class BarClientService {
 
     public String getBar() {
     	
-    	String barUrl = "http://z-springboot-bar-service";
+    	String barUrl = "http://z-springboot-bar-service/msg";
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }
