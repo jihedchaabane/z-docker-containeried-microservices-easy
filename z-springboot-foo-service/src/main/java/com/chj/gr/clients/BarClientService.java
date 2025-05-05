@@ -1,4 +1,4 @@
-package com.chj.gr.config;
+package com.chj.gr.clients;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,5 +1,12 @@
 # z-springboot-bar-service
 -----------------------------------------------------
+http://localhost:7777/swagger-ui/index.html
+http://10.0.0.137:7777/swagger-ui/index.html
+
+curl http://10.0.0.137:7777/
+curl http://10.0.0.137:7777/msg
+curl http://10.0.0.137:7777/properties
+-----------------------------------------------------
 IN "10.0.0.137" do:
 -----------------------------------------------------
 sudo firewall-cmd --add-port=7777/tcp --permanent
@@ -14,10 +21,4 @@ sudo firewall-cmd --reload
 
 sudo firewall-cmd --list-ports
 sudo firewall-cmd --list-all
------------------------------------------------------
-http://10.0.0.137:7777/swagger-ui/index.html
-
-curl http://10.0.0.137:7777/
-curl http://10.0.0.137:7777/msg
-curl http://10.0.0.137:7777/properties
 -----------------------------------------------------

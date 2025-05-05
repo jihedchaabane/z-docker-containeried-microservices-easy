@@ -2,8 +2,6 @@ server:
   port: 7776
 
 spring:
-  profiles:
-    active: dev
   application:
     name: z-springboot-hello-world-service
   # Connect to the config server to get the properties

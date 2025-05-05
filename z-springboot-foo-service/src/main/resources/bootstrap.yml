@@ -2,8 +2,6 @@ server:
   port: 7778
 
 spring:
-  profiles:
-    active: dev
   application:
     name: z-springboot-foo-service
   # Connect to the config server to get the properties

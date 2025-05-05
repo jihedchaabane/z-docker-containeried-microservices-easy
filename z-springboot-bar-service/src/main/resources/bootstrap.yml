@@ -2,8 +2,6 @@
 server:
   port: 7777
 spring:
-  profiles:
-    active: dev
   application:
     name: z-springboot-bar-service
   # Connect to the config server to get the properties
