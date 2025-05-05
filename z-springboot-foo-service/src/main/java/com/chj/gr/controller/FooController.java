@@ -41,7 +41,7 @@ public class FooController {
     @GetMapping("/foobar")
     public String fooBar() {
     	
-    	String foobar = "foo" + barClientService.getBar();
+    	String foobar = "foo --> " + barClientService.getBar();
     	logger.info("{}", foobar);
         return foobar;
     }
