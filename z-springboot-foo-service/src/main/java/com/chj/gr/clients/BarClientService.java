@@ -18,14 +18,14 @@ public class BarClientService {
 
     public String getBar() {
     	
-    	String barUrl = "http://z-springboot-bar-service/msg";
+    	String barUrl = "http://z-springboot-bar-service/bar/msg";
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }
 
     public String getBarProperties() {
     	
-    	String barUrl = "http://z-springboot-bar-service/properties";
+    	String barUrl = "http://z-springboot-bar-service/bar/properties";
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }
