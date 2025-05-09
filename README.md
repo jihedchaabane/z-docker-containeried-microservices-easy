@@ -1,26 +1,46 @@
 # z-docker-containeried-microservices-easy
+2_WKS_Z_DOCKER_CONTAINERIED_MICROSERVICES_EASY
 
-# Jenkins
+# JENKINS
 http://10.0.0.137:8080/
-# SonarQube
+
+# SONARQUBE
 http://10.0.0.137:9000/
-# Eureka
+
+# ZIPKIN-SERVER
+http://10.0.0.137:9411/
+
+# EUREKA
 http://10.0.0.137:8761/
-# Config Server
+
+# CONFIG-SERVER
 http://10.0.0.137:8762/actuator/health
-# Springboot Admin
+
+# SPRINGBOOT-ADMIN
 http://10.0.0.137:8763/
 
-# z-springboot-hello
+# SWAGGER-AGGREGATOR
+http://10.0.0.137:8765/
+
+# GATEWAY-API
+http://10.0.0.137:8766/
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+# Z-SPRINGBOOT-HELLO
 http://10.0.0.137:7775/swagger-ui/index.html
-# z-springboot-hello-world-service
+
+# Z-SPRINGBOOT-HELLO-WORLD-SERVICE
 http://10.0.0.137:7776/swagger-ui/index.html
-# z-springboot-bar-service =>> (VAULT configured)
+
+# Z-SPRINGBOOT-BAR-SERVICE =>> (VAULT configured)
 http://10.0.0.137:7777/swagger-ui/index.html
-# z-springboot-foo-service
+
+# Z-SPRINGBOOT-FOO-SERVICE
 http://10.0.0.137:7778/swagger-ui/index.html
 
-# Vault container
+# VAULT CONTAINER
 http://10.0.0.137:8200/
 
 
