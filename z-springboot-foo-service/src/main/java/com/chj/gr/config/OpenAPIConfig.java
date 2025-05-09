@@ -61,9 +61,13 @@ public class OpenAPIConfig {
 
 		License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
-		Info info = new Info().title("Swagger Management API").version("0.0.1-SNAPSHOT").contact(contact)
-				.description("This API exposes endpoints to manage " + artifact + ".")
-				.termsOfService("https://www.jihed.com").license(mitLicense);
+		Info info = new Info()
+				.title("Swagger Management API")
+				.version("0.0.1-SNAPSHOT")
+				.contact(contact)
+				.description("This API exposes endpoints to manage " + artifact.toUpperCase() + ".")
+				.termsOfService("https://www.jihed.com")
+				.license(mitLicense);
 
 		return new OpenAPI().info(info).servers(List.of(localServer, devServer, homolServer, prodServer));
 	}

@@ -16,7 +16,7 @@ public class HelloWorldController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-    @Value("${hello.msg:Config Server is not working. Please check...}")
+    @Value("${hello.msg}")
    	private String helloMsg;
     
     @GetMapping("/hello")

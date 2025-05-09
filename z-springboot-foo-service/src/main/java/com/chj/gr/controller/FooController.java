@@ -23,7 +23,7 @@ public class FooController {
         this.barClientService = barClientService;
     }
 
-    @Value("${foo.msg:Config Server is not working. Please check...}")
+    @Value("${foo.msg}")
    	private String fooMsg;
     
     @GetMapping("/")

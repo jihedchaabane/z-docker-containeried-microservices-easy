@@ -18,7 +18,7 @@ public class BarController {
 
 	@Autowired
 	private BarPropertiesConfiguration barPropertiesConfiguration;
-	@Value("${msg:Config Server is not working. Please check...}")
+	@Value("${msg}")
 	private String msg;
 	
 	@GetMapping("/msg")
