@@ -18,7 +18,6 @@ pipeline {
         CONFIG_SERVER_ADDR = 'http://container-springboot-conf-config-server:8762'
         
         VAULT_ADDR='http://container-vault-server:8200'
-        VAULT_TOKEN='hvs.QAigoJsBEOTh2FzWL0A1Afb0'
     }
     stages {
         stage('Checkout') {
