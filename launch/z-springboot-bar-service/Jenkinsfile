@@ -132,26 +132,20 @@ pipeline {
             steps {
                 script {
                     // Lancer le conteneur
-//                    sh """
-//                        docker run \
-//                        	-e EUREKA_ADDR=${EUREKA_URL} \
-//                        	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
-//                        	-d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
-//                        	-p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
-//                    """
-                    	sh """
-		                    docker run \
-                        	    -e SPRING_PROFILES_ACTIVE=${ACTIVE_PROFILE} \
-		                    	-e EUREKA_ADDR=${EUREKA_URL} \
-		                       	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
-							    -e SPRING_CLOUD_VAULT_TOKEN=${VAULT_TOKEN} \
-							    -e SPRING_CLOUD_VAULT_URI=${VAULT_ADDR} \
-							    -e SPRING_CLOUD_VAULT_AUTHENTICATION=TOKEN \
-							    -e SPRING_CLOUD_VAULT_KV_ENABLED=true \
-							    -e SPRING_CLOUD_VAULT_KV_DEFAULT_CONTEXT=${MODULE_PATH} \
-							    -d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
-							    -p ${APP_PORT}:${APP_PORT} ${DOCKER_IMAGE}
-     					"""
+                	sh """
+	                    docker run \
+                    	    -e SPRING_PROFILES_ACTIVE=${ACTIVE_PROFILE} \
+	                    	-e EUREKA_ADDR=${EUREKA_URL} \
+	                       	-e CONFIG_SERVER_ADDR=${CONFIG_SERVER_ADDR} \
+						    -e SPRING_CLOUD_VAULT_TOKEN=${VAULT_TOKEN} \
+						    -e SPRING_CLOUD_VAULT_URI=${VAULT_ADDR} \
+						    -e SPRING_CLOUD_VAULT_AUTHENTICATION=TOKEN \
+						    -e SPRING_CLOUD_VAULT_KV_ENABLED=true \
+						    -e SPRING_CLOUD_VAULT_KV_DEFAULT_CONTEXT=${MODULE_PATH} \
+						    -d --name ${CONTAINER_NAME} --network ${DOCKER_NETWORK} \
+						    -p ${APP_PORT}:${APP_PORT} \
+						    ${DOCKER_IMAGE}
+ 					"""
                 }
             }
         }
