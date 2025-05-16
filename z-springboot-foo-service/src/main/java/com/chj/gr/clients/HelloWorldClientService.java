@@ -11,7 +11,7 @@ import com.chj.gr.properties.CallerDestinationProperties;
 import com.chj.gr.properties.CallerDestinationProperties.DestinationClient;
 
 @Component
-public class BarClientService {
+public class HelloWorldClientService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -19,32 +19,37 @@ public class BarClientService {
     
     private CallerDestinationProperties callerDestinationProperties; 
 
-    public BarClientService(
+    public HelloWorldClientService(
     		@Qualifier("restTemplate") RestTemplate restTemplate, 
     		CallerDestinationProperties callerDestinationProperties) {
         this.restTemplate = restTemplate;
         this.callerDestinationProperties = callerDestinationProperties;
     }
 
-    public String getBar() {
+    public String get1() {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
-    			EnumResourceServer.STS_BAR_SERVICE_REGISTRATION.getKey());
+    			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
     	
-    	/**
-    	 * http://z-springboot-bar-service/bar/msg.
-    	 * Appel via l'instance eureka.
-    	 */
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/msg");
-    	logger.info("Calling {}", barUrl);
-        return restTemplate.getForObject(barUrl, String.class);
+    	String url = destinationClient.getResourceUri().concat("/helloservice/hello");
+    	logger.info("Calling {}", url);
+        return restTemplate.getForObject(url, String.class);
     }
 
-    public String getBarProperties() {
+    public String get2() {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
-    			EnumResourceServer.STS_BAR_SERVICE_REGISTRATION.getKey());
+    			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
     	
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/properties");
-    	logger.info("Calling {}", barUrl);
-        return restTemplate.getForObject(barUrl, String.class);
+    	String url = destinationClient.getResourceUri().concat("/helloservice/hello-property");
+    	logger.info("Calling {}", url);
+        return restTemplate.getForObject(url, String.class);
+    }
+
+    public String get3() {
+    	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
+    			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
+    	
+    	String url = destinationClient.getResourceUri().concat("/helloservice/display-properties");
+    	logger.info("Calling {}", url);
+        return restTemplate.getForObject(url, String.class);
     }
 }

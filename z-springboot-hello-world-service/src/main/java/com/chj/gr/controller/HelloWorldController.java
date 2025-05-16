@@ -15,9 +15,13 @@ import com.chj.gr.properties.HelloPropertiesConfiguration;
 public class HelloWorldController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	private HelloPropertiesConfiguration helloPropertiesConfiguration;
 	
     @Value("${hello.msg}")
    	private String helloMsg;
+    
+    
     
     @GetMapping("/hello")
     public String hello() {
@@ -31,9 +35,6 @@ public class HelloWorldController {
         return helloMsg;
     }
     
-    @Autowired
-	private HelloPropertiesConfiguration helloPropertiesConfiguration;
-
 	@GetMapping("/display-properties")
 	public String getProperties() {
 		logger.info("{}", helloPropertiesConfiguration.toString());

@@ -11,7 +11,7 @@ import com.chj.gr.properties.CallerDestinationProperties;
 import com.chj.gr.properties.CallerDestinationProperties.DestinationClient;
 
 @Component
-public class BarClientService {
+public class HelloClientService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -19,32 +19,19 @@ public class BarClientService {
     
     private CallerDestinationProperties callerDestinationProperties; 
 
-    public BarClientService(
+    public HelloClientService(
     		@Qualifier("restTemplate") RestTemplate restTemplate, 
     		CallerDestinationProperties callerDestinationProperties) {
         this.restTemplate = restTemplate;
         this.callerDestinationProperties = callerDestinationProperties;
     }
 
-    public String getBar() {
+    public String get() {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
-    			EnumResourceServer.STS_BAR_SERVICE_REGISTRATION.getKey());
+    			EnumResourceServer.STS_HELLO_SERVICE_REGISTRATION.getKey());
     	
-    	/**
-    	 * http://z-springboot-bar-service/bar/msg.
-    	 * Appel via l'instance eureka.
-    	 */
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/msg");
-    	logger.info("Calling {}", barUrl);
-        return restTemplate.getForObject(barUrl, String.class);
-    }
-
-    public String getBarProperties() {
-    	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
-    			EnumResourceServer.STS_BAR_SERVICE_REGISTRATION.getKey());
-    	
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/properties");
-    	logger.info("Calling {}", barUrl);
-        return restTemplate.getForObject(barUrl, String.class);
+    	String url = destinationClient.getResourceUri().concat("/hello/world");
+    	logger.info("Calling {}", url);
+        return restTemplate.getForObject(url, String.class);
     }
 }

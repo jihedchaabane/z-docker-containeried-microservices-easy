@@ -28,6 +28,11 @@
 
 	<dependencies>
 		<dependency>
+		    <groupId>com.chj.gr</groupId>
+		    <artifactId>gr-common-configs</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -49,12 +54,6 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-bootstrap</artifactId>
 		</dependency>
-		<!--SWAGGER -->
-		<dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc.version}</version>
-        </dependency>
         <!--ZIPKIN-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
