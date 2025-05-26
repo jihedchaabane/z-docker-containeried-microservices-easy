@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.chj.gr.config.properties.CallerDestinationProperties;
+import com.chj.gr.config.properties.CallerDestinationProperties.DestinationClient;
 import com.chj.gr.enums.EnumResourceServer;
-import com.chj.gr.properties.CallerDestinationProperties;
-import com.chj.gr.properties.CallerDestinationProperties.DestinationClient;
 
 @Component
 public class BarClientService {
@@ -34,7 +34,7 @@ public class BarClientService {
     	 * http://z-springboot-bar-service/bar/msg.
     	 * Appel via l'instance eureka.
     	 */
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/msg");
+    	String barUrl = destinationClient.getResourceUri().concat("/z-springboot-bar-service/msg");
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }
@@ -43,7 +43,7 @@ public class BarClientService {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
     			EnumResourceServer.STS_BAR_SERVICE_REGISTRATION.getKey());
     	
-    	String barUrl = destinationClient.getResourceUri().concat("/bar/properties");
+    	String barUrl = destinationClient.getResourceUri().concat("/z-springboot-bar-service/properties");
     	logger.info("Calling {}", barUrl);
         return restTemplate.getForObject(barUrl, String.class);
     }

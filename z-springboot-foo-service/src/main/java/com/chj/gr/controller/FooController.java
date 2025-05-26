@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.properties.FooPropertiesConfiguration;
 
 @RestController
-@RequestMapping("/foo")
+@RequestMapping("/z-springboot-foo-service")
 public class FooController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -21,7 +21,7 @@ public class FooController {
     @Value("${foo.msg}")
    	private String fooMsg;
     
-    @GetMapping("/")
+    @GetMapping("/get")
     public String foo() {
     	logger.info("{}", "foo");
         return fooMsg;

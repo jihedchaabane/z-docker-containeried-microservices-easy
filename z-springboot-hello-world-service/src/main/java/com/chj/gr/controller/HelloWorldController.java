@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.properties.HelloPropertiesConfiguration;
 
 @RestController
-@RequestMapping("/helloservice")
+@RequestMapping("/z-springboot-hello-world-service")
 public class HelloWorldController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());

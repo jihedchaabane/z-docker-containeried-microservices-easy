@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.chj.gr.config.properties.CallerDestinationProperties;
+import com.chj.gr.config.properties.CallerDestinationProperties.DestinationClient;
 import com.chj.gr.enums.EnumResourceServer;
-import com.chj.gr.properties.CallerDestinationProperties;
-import com.chj.gr.properties.CallerDestinationProperties.DestinationClient;
 
 @Component
 public class HelloWorldClientService {
@@ -30,7 +30,7 @@ public class HelloWorldClientService {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
     			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
     	
-    	String url = destinationClient.getResourceUri().concat("/helloservice/hello");
+    	String url = destinationClient.getResourceUri().concat("/z-springboot-hello-world-service/hello");
     	logger.info("Calling {}", url);
         return restTemplate.getForObject(url, String.class);
     }
@@ -39,7 +39,7 @@ public class HelloWorldClientService {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
     			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
     	
-    	String url = destinationClient.getResourceUri().concat("/helloservice/hello-property");
+    	String url = destinationClient.getResourceUri().concat("/z-springboot-hello-world-service/hello-property");
     	logger.info("Calling {}", url);
         return restTemplate.getForObject(url, String.class);
     }
@@ -48,7 +48,7 @@ public class HelloWorldClientService {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
     			EnumResourceServer.STS_HELLOWORLD_SERVICE_REGISTRATION.getKey());
     	
-    	String url = destinationClient.getResourceUri().concat("/helloservice/display-properties");
+    	String url = destinationClient.getResourceUri().concat("/z-springboot-hello-world-service/display-properties");
     	logger.info("Calling {}", url);
         return restTemplate.getForObject(url, String.class);
     }

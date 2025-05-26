@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.clients.BarClientService;
 
 @RestController
-@RequestMapping("/foo/bar")
+@RequestMapping("/z-springboot-foo-service")
 public class Ms1BarClientController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -20,7 +20,7 @@ public class Ms1BarClientController {
         this.barClientService = barClientService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/bar")
     public String fooBar() {
     	
     	String foobar = "foo --> " + barClientService.getBar();
