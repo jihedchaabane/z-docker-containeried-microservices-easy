@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/z-springboot-hello")
 //@CrossOrigin(origins = "*")
 public class HelloWorldController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-    @GetMapping("/world")
+    @GetMapping("/hello")
     public String hello() {
-    	logger.info("{}", "hello world");
-        return "hello world";
+    	logger.info("{}", "hello");
+        return "hello";
     }
 }

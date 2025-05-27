@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.clients.HelloWorldClientService;
 
 @RestController
-@RequestMapping("/foo/helloworld")
+@RequestMapping("/z-springboot-foo-service")
 public class Ms3HelloWorldClientController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -20,7 +20,7 @@ public class Ms3HelloWorldClientController {
         this.helloWorldClientService = helloWorldClientService;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/helloworld")
     public String get1() {
     	
     	String foo = "foo --> " + helloWorldClientService.get1();
@@ -28,7 +28,7 @@ public class Ms3HelloWorldClientController {
         return foo;
     }
     
-    @GetMapping("/hello-property")
+    @GetMapping("/helloworld/hello-property")
     public String get2() {
     	
     	String foo = "foo --> " + helloWorldClientService.get2();
@@ -36,7 +36,7 @@ public class Ms3HelloWorldClientController {
         return foo;
     }
     
-    @GetMapping("/display-properties")
+    @GetMapping("/helloworld/display-properties")
     public String get3() {
     	
     	String foo = "foo --> " + helloWorldClientService.get3();

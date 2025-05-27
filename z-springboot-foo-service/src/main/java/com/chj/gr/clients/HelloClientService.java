@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.chj.gr.config.properties.CallerDestinationProperties;
+import com.chj.gr.config.properties.CallerDestinationProperties.DestinationClient;
 import com.chj.gr.enums.EnumResourceServer;
-import com.chj.gr.properties.CallerDestinationProperties;
-import com.chj.gr.properties.CallerDestinationProperties.DestinationClient;
 
 @Component
 public class HelloClientService {
@@ -30,7 +30,7 @@ public class HelloClientService {
     	DestinationClient destinationClient = callerDestinationProperties.getDestinationClient(
     			EnumResourceServer.STS_HELLO_SERVICE_REGISTRATION.getKey());
     	
-    	String url = destinationClient.getResourceUri().concat("/hello/world");
+    	String url = destinationClient.getResourceUri().concat("/z-springboot-hello/hello");
     	logger.info("Calling {}", url);
         return restTemplate.getForObject(url, String.class);
     }

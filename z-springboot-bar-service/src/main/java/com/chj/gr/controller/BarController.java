@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.properties.BarPropertiesConfiguration;
 
 @RestController
-@RequestMapping("/bar")
+@RequestMapping("/z-springboot-bar-service")
 public class BarController {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());

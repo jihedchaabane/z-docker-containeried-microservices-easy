@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chj.gr.clients.HelloClientService;
 
 @RestController
-@RequestMapping("/foo/hello")
+@RequestMapping("/z-springboot-foo-service")
 public class Ms2HelloClientController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -20,7 +20,7 @@ public class Ms2HelloClientController {
         this.helloClientService = helloClientService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String get() {
     	
     	String foo = "foo --> " + helloClientService.get();
