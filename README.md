@@ -20,7 +20,7 @@ http://10.0.0.137:8762/actuator/health
 http://10.0.0.137:8763/
 
 # SWAGGER-AGGREGATOR
-http://10.0.0.137:8765/
+http://10.0.0.137:8766/
 
 # GATEWAY-API
 http://10.0.0.137:8766/
